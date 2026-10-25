@@ -1,7 +1,7 @@
 const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const { User, Group } = require('./models');
+const { User, Group } = require('./backend/models');
 
 const passKey = (p) => crypto.createHmac('sha256', process.env.PASS_SECRET).update(String(p)).digest('hex');
 const norm = (s) => String(s || '').trim().replace(/\s+/g, ' ').toLowerCase();
